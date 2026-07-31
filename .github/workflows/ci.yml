@@ -31,11 +31,11 @@ jobs:
 
             - name: Check code formatting
               run: |
-                black --check src tests
+                black --check opportunity_agent tests
 
             - name: Run Ruff
               run: |
-                ruff check src tests
+                ruff check opportunity_agent tests
 
             - name: Run tests
               run: |
