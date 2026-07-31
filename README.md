@@ -1,3 +1,5 @@
+![CI](https://github.com/nachiket273/paper-assistant-lab/actions/workflows/ci.yml/badge.svg)
+
 # OpportunityAgent
 
 > AI-powered agent that continuously discovers, ranks, and tracks research and engineering opportunities based on your CV.
