@@ -66,3 +66,9 @@ class CandidateProfile:
     tools: list[str] = field(default_factory=list)
     research_interests: list[str] = field(default_factory=list)
     certifications: list[str] = field(default_factory=list)
+
+
+@dataclass(slots=True)
+class ParsedDocument:
+    text: str
+    page_count: int
