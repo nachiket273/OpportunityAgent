@@ -180,37 +180,37 @@ OpportunityAgent
 
 ## Version 1
 
-- CV parsing
-- Skill extraction
-- Search multiple sources
-- Excel generation
-- Email reports
+- [x] CV parsing
+- [x] Skill extraction
+- [ ] Search multiple sources
+- [ ] Excel generation
+- [ ] Email reports
 
 ---
 
 ## Version 2
 
-- AI match scoring
-- Duplicate detection
-- Opportunity history
-- Better ranking
+- [ ] AI match scoring
+- [ ] Duplicate detection
+- [ ] Opportunity history
+- [ ] Better ranking
 
 ---
 
 ## Version 3
 
-- Cover letter generation
-- Statement of Purpose generation
-- Research statement generation
+- [ ] Cover letter generation
+- [ ] Statement of Purpose generation
+- [ ] Research statement generation
 
 ---
 
 ## Version 4
 
-- Multi-agent architecture
-- User dashboard
-- Resume optimization
-- Application tracker
+- [ ] Multi-agent architecture
+- [ ] User dashboard
+- [ ] Resume optimization
+- [ ] Application tracker
 - Interview reminders
 
 ---
