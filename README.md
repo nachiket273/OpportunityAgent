@@ -211,7 +211,7 @@ OpportunityAgent
 - [ ] User dashboard
 - [ ] Resume optimization
 - [ ] Application tracker
-- Interview reminders
+- [ ] Interview reminders
 
 ---
 
