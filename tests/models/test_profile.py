@@ -5,7 +5,8 @@ from opportunity_agent.models.profile import SearchProfile
 
 
 def test_search_profile_defaults():
-    """Verify that all fields default to empty lists when instantiated with no arguments."""
+    """Verify that all fields default to empty lists
+    when instantiated with no arguments."""
     profile = SearchProfile()
 
     assert profile.keywords == []

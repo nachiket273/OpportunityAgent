@@ -70,7 +70,8 @@ def test_job_requirement_full_initialization():
 
 
 def test_job_requirement_type_coercion():
-    """Verify string coercion for experience years and boolean coercion for visa_sponsorship."""
+    """Verify string coercion for experience years and boolean coercion
+    for visa_sponsorship."""
     req = JobRequirement(experience_years="5", visa_sponsorship="True")
     assert req.experience_years == 5
     assert req.visa_sponsorship is True
