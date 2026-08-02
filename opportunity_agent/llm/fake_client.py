@@ -23,8 +23,10 @@ class FakeLLMClient(LLMClient):
         Initialize the fake LLM client.
 
         Args:
-            responses (list[dict[str, Any]] | None): A list of responses to return for each call.
-            exception_to_raise (Exception | None): An exception to raise instead of returning a response.
+            responses (list[dict[str, Any]] | None): A list of responses to return for
+            each call.
+            exception_to_raise (Exception | None): An exception to raise instead of
+            returning a response.
         """
         self.responses = responses or []
         self.exception_to_raise = exception_to_raise
@@ -44,7 +46,8 @@ class FakeLLMClient(LLMClient):
         Args:
             prompt (str): The prompt to send to the LLM.
             text (str): The text to send to the LLM.
-            response_schema (Type[BaseModel] | None): The schema for the expected response.
+            response_schema (Type[BaseModel] | None):
+                The schema for the expected response.
         """
         self.call_count += 1
         self.recorded_prompts.append(prompt)

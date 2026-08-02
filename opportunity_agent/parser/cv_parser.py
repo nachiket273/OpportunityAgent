@@ -5,8 +5,8 @@ import json
 from pydantic import ValidationError
 
 from opportunity_agent.llm.client import LLMClient
+from opportunity_agent.models.candidate import CandidateProfile, ParsedResult
 from opportunity_agent.parser import prompts
-from opportunity_agent.parser.models import CandidateProfile, ParsedResult
 
 
 class CVParser:
@@ -35,10 +35,12 @@ class CVParser:
                 if attempts == 0:
                     current_prompt = prompts.CV_PARSE_PROMPT
                 else:
-                    # If there was an error, we can modify the prompt to ask for clarification or correction
+                    # If there was an error, we can modify the prompt to ask for
+                    # clarification or correction
                     current_prompt = (
                         f"{prompts.CV_PARSE_PROMPT}"
-                        f"\n\nCRITICAL: Your previous output failed validation with error:\n{last_error}\n"
+                        f"\n\nCRITICAL: Your previous output failed validation"
+                        f" with error:\n{last_error}\n"
                         f"Please fix the schema issues and re-extract accurately."
                     )
 
@@ -60,12 +62,14 @@ class CVParser:
 
                 if attempts > self.max_retries:
                     print(
-                        f"CRITICAL: Failed to parse CV after {self.max_retries} attempts. Last error: {last_error}"
+                        f"CRITICAL: Failed to parse CV after {self.max_retries}"
+                        f" attempts. Last error: {last_error}"
                     )
                     return ParsedResult(
                         profile=CandidateProfile(name="Unknown / Extraction Failed"),
                         warnings=[
-                            f"CRITICAL: Failed to parse CV after {self.max_retries} attempts. Last error: {last_error}"
+                            f"CRITICAL: Failed to parse CV after {self.max_retries}"
+                            f" attempts. Last error: {last_error}"
                         ],
                         is_successful=False,
                     )
@@ -100,7 +104,8 @@ class CVParser:
             for idx, exp in enumerate(profile.experience):
                 if not exp.start_date:
                     warnings.append(
-                        f"DATA_QUALITY: Experience block '{exp.title} at {exp.organization}' "
+                        f"DATA_QUALITY: Experience block"
+                        f"'{exp.title} at {exp.organization}'"
                         f"is missing a start date."
                     )
 

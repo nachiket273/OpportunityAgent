@@ -12,7 +12,8 @@ class GeminiClient(LLMClient):
         self.api_key = api_key or os.getenv("GEMINI_API_KEY")
         if not self.api_key:
             raise ValueError(
-                "API key must be provided either as an argument or through the GEMINI_API_KEY environment variable."
+                "API key must be provided either as an argument"
+                "or through the GEMINI_API_KEY environment variable."
             )
 
         self.client = genai.Client(api_key=self.api_key)

@@ -4,7 +4,7 @@ from pathlib import Path
 
 import fitz
 
-from opportunity_agent.parser.models import ParsedDocument
+from opportunity_agent.models.candidate import ParsedDocument
 
 
 class PDFParsingError(Exception):
