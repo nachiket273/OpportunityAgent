@@ -21,3 +21,11 @@ class SearchProfile(BaseModel):
         description="List of job types (e.g., full-time, part-time, contract) to filter"
         "candidate profiles.",
     )
+    search_queries: list[str] = Field(
+        default_factory=list,
+        description=(
+            "3 to 5 distinct, highly-targeted search engine query strings "
+            "(e.g., ['Quantum Computing Research Engineer',"
+            "'PyTorch Machine Learning PhD'])."
+        ),
+    )

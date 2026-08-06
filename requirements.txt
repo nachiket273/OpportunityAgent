@@ -1,3 +1,4 @@
 PyMuPDF>=1.26
 tqdm>=4.65
 pydantic>=2.10
+playwright>=1.49.0

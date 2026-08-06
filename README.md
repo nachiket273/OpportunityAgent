@@ -182,7 +182,7 @@ OpportunityAgent
 
 - [x] CV parsing
 - [x] Skill extraction
-- [ ] Search multiple sources
+- [x] Search multiple sources
 - [ ] Excel generation
 - [ ] Email reports
 

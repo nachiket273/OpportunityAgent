@@ -6,7 +6,7 @@ from pydantic import ValidationError
 
 from opportunity_agent.llm.client import LLMClient
 from opportunity_agent.models.candidate import CandidateProfile, ParsedResult
-from opportunity_agent.parser import prompts
+from opportunity_agent.prompts import prompts
 
 
 class CVParser:

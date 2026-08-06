@@ -29,6 +29,10 @@ jobs:
               run: |
                 pip install -r requirements-dev.txt
 
+            - name: Install Playwright browsers
+              run: |
+                playwright install chromium
+
             - name: Check code formatting
               run: |
                 black --check opportunity_agent tests

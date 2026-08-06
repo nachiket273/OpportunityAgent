@@ -107,3 +107,30 @@ def test_search_profile_deserialization():
     assert profile_from_json.keywords == ["devops"]
     assert profile_from_json.job_titles == ["SRE"]
     assert profile_from_json.countries == []
+
+
+def test_search_profile_search_queries_field():
+    """Verify that the search_queries field is correctly initialized and serialized."""
+    profile = SearchProfile(
+        search_queries=[
+            "Quantum Computing Research Engineer",
+            "PyTorch Machine Learning PhD",
+        ]
+    )
+
+    assert profile.search_queries == [
+        "Quantum Computing Research Engineer",
+        "PyTorch Machine Learning PhD",
+    ]
+
+    dumped_dict = profile.model_dump()
+    assert dumped_dict["search_queries"] == [
+        "Quantum Computing Research Engineer",
+        "PyTorch Machine Learning PhD",
+    ]
+
+    json_data = profile.model_dump_json()
+    assert (
+        '"search_queries":["Quantum Computing Research Engineer",'
+        '"PyTorch Machine Learning PhD"]' in json_data
+    )
