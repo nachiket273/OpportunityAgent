@@ -84,6 +84,7 @@ def test_search_profile_serialization():
         "job_titles": ["Data Scientist"],
         "countries": [],
         "job_types": [],
+        "search_queries": [],
     }
 
     json_data = profile.model_dump_json()
