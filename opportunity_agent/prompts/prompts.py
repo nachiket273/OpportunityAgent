@@ -46,3 +46,24 @@ Rules:
 3. Classify job_type and employment_type using standard Enum values where applicable.
 4. If essential fields like organization or title are missing, do not invent them.
 """
+
+
+MATCH_EVALUATION_PROMPT = """
+You are an expert career consultant and academic research strategist.
+
+Your task is to evaluate the match fit between a CandidateProfile and a JobPosting.
+
+Analyze the following dimensions:
+1. Education Fit: Does the candidate meet or exceed required/preferred degrees?
+2. Research Fit: Do research interests, domain expertise, and publications align
+   with the job requirements?
+3. Technical Skills: Do technical skills, frameworks, and tools match the role?
+4. Programming Languages: Does the candidate meet required programming experience?
+5. Experience Fit: Is work history relevant to the role?
+
+Scoring Rules:
+- Scores must be floats between 0.0 and 1.0 (or scaled 0.0 to 100.0 based on schema).
+- Be objective and realistic. Highlight explicit missing requirements or gaps.
+- Provide clear strengths and actionable reasoning explaining
+  whether the candidate should apply.
+"""
