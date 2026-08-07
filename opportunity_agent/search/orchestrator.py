@@ -40,7 +40,7 @@ class OpportunitySearchOrchestrator:
             if isinstance(res, list):
                 all_postings.extend(res)
 
-        deduped = self._deduplicate_postings(results_nested)
+        deduped = self._deduplicate_postings(all_postings)
         return search_profile, deduped
 
     def _deduplicate_postings(self, postings: list[JobPosting]) -> list[JobPosting]:

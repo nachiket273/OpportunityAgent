@@ -76,6 +76,9 @@ class LLMWebScraperProvider(BaseSearchProvider):
         Returns:
             list[str]: A list of search queries.
         """
+        if profile.search_queries:
+            return profile.search_queries
+
         queries: list[str] = []
 
         # Primary Title + Top 2 keywords
