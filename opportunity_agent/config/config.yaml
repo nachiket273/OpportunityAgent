@@ -1,0 +1,13 @@
+llm:
+  model: "gemini-2.5-flash"
+  temperature: 0.0
+
+filter:
+  min_overall_score: 60.0
+  allowed_countries:
+    - "Germany"
+    - "India"
+    - "France"
+  excluded_countries:
+    - "USA"
+  exclude_expired_deadlines: true
