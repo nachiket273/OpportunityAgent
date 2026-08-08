@@ -60,6 +60,20 @@ class RankingConfig(BaseModel):
     )
 
 
+class EmailConfig(BaseModel):
+    """
+    Configuration settings for SMTP email notification.
+    """
+
+    enabled: bool = Field(default=False)
+    smtp_server: str = Field(default="smtp.gmail.com")
+    smtp_port: int = Field(default=587)
+    username: str = Field(default="")
+    password: str = Field(default="")  # Use App Passwords for Gmail
+    sender_email: str = Field(default="")
+    recipient_email: str = Field(default="")
+
+
 class AppConfig(BaseModel):
     """
     Master application configuration model.
@@ -67,6 +81,7 @@ class AppConfig(BaseModel):
 
     llm: LLMConfig = Field(default_factory=LLMConfig)
     ranking: RankingConfig = Field(default_factory=RankingConfig)
+    email: EmailConfig = Field(default_factory=EmailConfig)
 
     @classmethod
     def load_from_yaml(

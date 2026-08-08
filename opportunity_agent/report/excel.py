@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import logging
 from pathlib import Path
 
 import openpyxl
@@ -9,8 +8,6 @@ from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 
 from opportunity_agent.models.report import OpportunityReport
-
-logger = logging.getLogger(__name__)
 
 
 class ExcelReportExporter:
@@ -116,9 +113,6 @@ class ExcelReportExporter:
         self._format_grid_and_widths(ws)
 
         wb.save(output_path)
-        logger.info(
-            f"Successfully exported {len(report.results)} matches to {output_path}"
-        )
         return output_path
 
     def _format_header_row(self, ws: openpyxl.worksheet.worksheet.Worksheet) -> None:
